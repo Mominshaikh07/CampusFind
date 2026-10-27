@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusFind</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>CampusFind</h1>
+        <p>Lost Something? We'll Help You Find It.</p>
+        <div id="userInfo" class="user-info"></div>
+        <div class="stats-container">
+
+    <div class="stat-card">
+        <h3>Lost Items</h3>
+        <p id="lostCount">0</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Found Items</h3>
+        <p id="foundCount">0</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Returned Items</h3>
+        <p id="returnedCount">0</p>
+    </div>
+
+</div>
+
+    <div class="menu">
+        <button onclick="showLostForm()">Report Lost Item</button>
+        <button onclick="showFoundForm()">Report Found Item</button>
+    </div>
+
+    <div id="itemForm"></div>
+
+    <div class="items-section">
+
+    <h2>Lost Items</h2>
+
+    <input
+    type="text"
+    id="lostSearch"
+    placeholder="Search lost items..."
+    oninput="searchLostItems()"
+/>
+    <div id="lostItems"></div>
+
+    <h2>Found Items</h2>
+
+    <input
+    type="text"
+    id="foundSearch"
+    placeholder="Search found items..."
+    oninput="searchFoundItems()"
+>
+    <div id="foundItems"></div>
+
+</div>
+
+        <div class="auth-box">
+
+            <h2>Login</h2>
+
+            <input type="email" id="loginEmail" placeholder="Email">
+
+            <input type="password" id="loginPassword" placeholder="Password">
+
+            <button onclick="login()">Login</button>
+
+            <p id="loginMessage"></p>
+
+        </div>
+
+        <hr>
+
+        <div class="auth-box">
+
+            <h2>Register</h2>
+
+            <input type="text" id="registerName" placeholder="Full Name">
+
+            <input type="email" id="registerEmail" placeholder="Email">
+
+            <input type="password" id="registerPassword" placeholder="Password">
+
+            <input type="text" id="collegeId" placeholder="College ID">
+
+            <button onclick="register()">Register</button>
+
+            <p id="registerMessage"></p>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+<!-- Contact Finder Modal -->
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+
+        <span class="close-btn" onclick="closeContactModal()">&times;</span>
+
+        <h2>Finder Details</h2>
+
+        <p>
+            <strong>Name:</strong>
+            <span id="finderName"></span>
+        </p>
+
+        <p>
+            <strong>Email:</strong>
+            <span id="finderEmail"></span>
+        </p>
+
+        <p>
+            <strong>College ID:</strong>
+            <span id="finderCollegeId"></span>
+        </p>
+
+    </div>
+</div>
+
+</body>
+</html>
